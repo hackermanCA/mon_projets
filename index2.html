@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseils Santé</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        
+        <script>
+            if (!localStorage.getItem("isLoggedIn")) {
+                
+                window.location.href = "login.html";
+            }
+        </script>
+
+        <header>
+            <h1>Bienvenue sur le site Conseils Santé</h1>
+            <p>Prévention, bien-être et remèdes naturels pour tous.</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#services">Nos conseils</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="logout()">Déconnexion</a></li> 
+            </ul>
+        </nav>
+
+        <section id="about" class="section">
+            <h2>À propos</h2>
+            <p>Notre mission est d'aider chacun à améliorer sa santé grâce à des conseils simples et efficaces.</p>
+        </section>
+
+        <section id="services" class="section">
+            <h2>Nos conseils</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Alimentation</h3>
+                    <p>Découvrez comment manger équilibré pour une meilleure santé.</p>
+                </div>
+                <div class="card">
+                    <h3>Exercices</h3>
+                    <p>Adopter une routine sportive adaptée à vos besoins.</p>
+                </div>
+                <div class="card">
+                    <h3>Remèdes naturels</h3>
+                    <p>Explorer des solutions naturelles pour les petits maux du quotidien.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "login.html"; 
+        }
+    </script>
+</body>
+
+</html>
