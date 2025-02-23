@@ -1,71 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<!--en tête-->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page de Connexion</title>
+    <title>Connexion - Conseils Santé</title>
     <link rel="stylesheet" href="style1.css">
 </head>
 
 <body>
     <div class="container">
         <h2>Connexion</h2>
-        <form id="loginForm" action="dashboard.html" method="POST">
-            
+        <form id="loginForm">
             <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" name="username" placeholder="Entrez votre nom" required>
-            <small id="usernameError" class="error"></small>
-
-        
+            <input type="text" id="username" required>
+            <br>
             <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
-            <small id="passwordError" class="error"></small>
-
-            
+            <input type="password" id="password" required>
+            <br>
             <button type="submit">Se connecter</button>
-
-            <p>Pas de compte ? <a href="register.html">S'inscrire</a></p>
         </form>
-    </div>
 
-    
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", (e) => {
-            const username = document.getElementById("username").value.trim();
-            const password = document.getElementById("password").value.trim();
-            const usernameError = document.getElementById("usernameError");
-            const passwordError = document.getElementById("passwordError");
-
-            
-            usernameError.textContent = "";
-            passwordError.textContent = "";
-
-            let isValid = true;
-
-            
-            const usernamePattern = /^[a-zA-Z0-9]{3,}$/;
-            if (!usernamePattern.test(username)) {
-                usernameError.textContent = "Le nom d'utilisateur doit contenir au moins 3 caractères (lettres et chiffres seulement).";
-                isValid = false;
-            }
-
-            
-            const passwordPattern = /^(?=.*[0-9]).{6,}$/;
-            if (!passwordPattern.test(password)) {
-                passwordError.textContent = "Le mot de passe doit contenir au moins 6 caractères, dont un chiffre.";
-                isValid = false;
-            }
-
-            
-            if (!isValid) {
+        <script>
+            document.getElementById("loginForm").addEventListener("submit", function (e) {
                 e.preventDefault();
-            }
-        });
-    </script>
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
 
+                if (username === "admin" && password === "1234") {
+                    localStorage.setItem("isLoggedIn", "true");
+                    window.location.href = "index.html";
+                } else {
+                    alert("Identifiants incorrects !");
+                }
+            });
+        </script>
+    </div>
 </body>
 
 </html>
