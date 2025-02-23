@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,26 +8,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body> <!-- corps du site -->
-    <div class="container">
-        
-        <script>
-            if (!localStorage.getItem("isLoggedIn")) {
-                
-                window.location.href = "login.html";
-            }
-        </script>
+<body>
+    <script>
+        if (!localStorage.getItem("isLoggedIn")) {
+            window.location.href = "login.html";
+        }
+    </script>
 
+    <div class="container">
         <header>
             <h1>Bienvenue sur le site Conseils Santé</h1>
             <p>Prévention, bien-être et remèdes naturels pour tous.</p>
         </header>
+
         <nav>
             <ul>
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#services">Nos conseils</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#" onclick="logout()">Déconnexion</a></li> 
+                <li><a href="#" onclick="logout()">Déconnexion</a></li>
             </ul>
         </nav>
 
@@ -54,15 +52,15 @@
                 </div>
             </div>
         </section>
-
     </div>
 
     <script>
         function logout() {
             localStorage.removeItem("isLoggedIn");
-            window.location.href = "login.html"; 
+            window.location.href = "login.html";
         }
     </script>
+
 </body>
 
 </html>
