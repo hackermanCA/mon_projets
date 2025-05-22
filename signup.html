@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription - Conseils Santé</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Créer un compte</h2>
+
+        <form onsubmit="handleSignup(event)">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Entrez un mot de passe" required>
+            </div>
+
+            <button type="submit" class="btn">S'inscrire</button>
+            <p>Déjà un compte ? <a href="login2.html">Se connecter</a></p>
+        </form>
+    </div>
+
+    <script>
+        function handleSignup(event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Stockage des informations dans le localStorage
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("userPassword", password);
+
+            alert("Inscription réussie ! Vous pouvez vous connecter.");
+            window.location.href = "login2.html"; // Redirige vers la page de connexion
+        }
+    </script>
+
+
+</body>
+
+</html>
+
