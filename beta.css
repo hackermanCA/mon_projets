@@ -1,0 +1,157 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    body {
+      background: #0d0d0d;
+      color: #fff;
+    }
+
+    header {
+      background-color: #111;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      color: #f9004d;
+      font-size: 24px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #f9004d;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom right, #1a1a1a, #3a3a3a);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #f9004d;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero h4 {
+      font-size: 1.2rem;
+      color: #f9004d;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .button-group a {
+      text-decoration: none;
+    }
+
+    button {
+      background-color: #f9004d;
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: transparent;
+      border: 2px solid #f9004d;
+    }
+
+    .resume {
+      padding: 60px 20px;
+      background-color: #1a1a1a;
+      text-align: center;
+    }
+
+    .resume h3 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .info-box {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .skills {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .skill {
+      background-color: #111;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .skill h4 {
+      margin-bottom: 10px;
+    }
+
+    .skill-bar {
+      height: 10px;
+      background: #333;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background-color: #f9004d;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 0.95rem;
+      }
+    }
